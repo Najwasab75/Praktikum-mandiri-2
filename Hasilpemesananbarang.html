@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pemesanan Barang</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 800px;
+            background: #ffffff;
+            border: 2px solid #999;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            border: 1px solid #333;
+            background-color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .navbar a {
+            flex: 1;
+            text-align: center;
+            padding: 8px 0;
+            text-decoration: none;
+            color: #000;
+            font-size: 12px;
+            border-right: 1px solid #333;
+        }
+
+        .navbar a:last-child {
+            border-right: none;
+        }
+
+        /* Main Content Layout */
+        .content {
+            display: flex;
+            gap: 20px;
+        }
+
+        .left-column {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .right-column {
+            width: 70%;
+        }
+
+        /* Image Placeholder Box (X Box) */
+        .image-box {
+            width: 150px;
+            height: 150px;
+            border: 1px solid #000;
+            position: relative;
+            background-color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .image-box::before, .image-box::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background-color: #000;
+            top: 50%;
+            left: 0;
+        }
+
+        .image-box::before { transform: rotate(45deg); }
+        .image-box::after { transform: rotate(-45deg); }
+
+        .upload-btn {
+            padding: 5px 15px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        /* Form Styling */
+        .product-details-box {
+            border: 1px solid #000;
+            padding: 10px;
+            margin-bottom: 15px;
+            background-color: #fff;
+        }
+
+        .form-group {
+            display: flex;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+
+        .form-group label {
+            width: 130px;
+            font-size: 12px;
+        }
+
+        .form-group input[type="text"], 
+        .form-group select {
+            flex: 1;
+            padding: 4px;
+            border: 1px solid #000;
+            font-size: 12px;
+        }
+
+        .info-text {
+            font-size: 10px;
+            color: #333;
+            margin-left: 130px;
+            margin-top: -5px;
+            margin-bottom: 10px;
+        }
+
+        .checkbox-group {
+            margin-left: 130px;
+            margin-bottom: 10px;
+            font-size: 11px;
+        }
+
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 5px;
+        }
+
+        /* Action Button */
+        .submit-btn {
+            background-color: #008000;
+            color: white;
+            border: 1px solid #000;
+            padding: 8px 15px;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-left: 130px;
+            border-radius: 4px;
+        }
+
+        .submit-btn:hover {
+            background-color: #006400;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">Ownership Link</a>
+        <a href="#">Transaction History</a>
+        <a href="#">Policy</a>
+        <a href="#">Logout</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Left Side: Image Upload -->
+        <div class="left-column">
+            <div class="image-box"></div>
+            <button class="upload-btn">Upload Picture</button>
+        </div>
+
+        <!-- Right Side: Form Fields -->
+        <div class="right-column">
+            <form action="#" method="POST">
+                
+                <!-- Product Details Container Box -->
+                <div class="product-details-box">
+                    <div class="form-group">
+                        <label>Title Here :</label>
+                        <input type="text" value="MacBook Air ER00">
+                    </div>
+                    <div class="form-group">
+                        <label>Description :</label>
+                        <input type="text" value="Year: 2009">
+                    </div>
+                    <div class="form-group">
+                        <label>Model :</label>
+                        <input type="text" value="">
+                    </div>
+                    <div class="form-group">
+                        <label>Condition :</label>
+                        <input type="text" value="Mint">
+                    </div>
+                </div>
+
+                <!-- Account Info -->
+                <div class="form-group">
+                    <label>Account Number :</label>
+                    <input type="text" value="123-456-789-0">
+                </div>
+
+                <div class="form-group">
+                    <label>Bank :</label>
+                    <select>
+                        <option selected>HSBC</option>
+                        <option>BCA</option>
+                        <option>Mandiri</option>
+                        <option>BNI</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Account Holder :</label>
+                    <input type="text" value="Name Here">
+                </div>
+
+                <div class="form-group">
+                    <label>Transaction :</label>
+                    <select style="flex: 0; width: 50px;">
+                        <option selected>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                </div>
+                <div class="info-text">* If the transaction is for 3 person, choose 3 from the drop-down list</div>
+
+                <!-- Checkboxes -->
+                <div class="checkbox-group">
+                    <label><input type="checkbox" checked> Send to Mobile Phone</label>
+                    <label><input type="checkbox" checked> Send to Email</label>
+                </div>
+
+                <!-- Contact Inputs -->
+                <div class="form-group">
+                    <label>Send to Mobile Phone :</label>
+                    <input type="text" value="1234567890, 1234567891">
+                </div>
+
+                <div class="form-group">
+                    <label>Send to Email :</label>
+                    <input type="text" value="admin2g13@aston.ac.uk, fys_06@yahoo.com">
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn">Ownership Matrix Link</button>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+  </html>
+              
